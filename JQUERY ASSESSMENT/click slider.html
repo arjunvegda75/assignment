@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>click slider</title>
+    <style>
+      section {
+        height: 500px;
+        width: 1000px;
+        margin: 20px auto;
+        box-shadow: 0px 0px 10px gray;
+        position: relative;
+        overflow: hidden;
+      }
+
+      img {
+        width: 100%;
+        position: absolute;
+        transition: 2s;
+      }
+
+      .nav {
+        text-align: center;
+      }
+
+      .nav button {
+        padding: 10px 20px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <section>
+      <img src="https://picsum.photos/id/237/1000/500" class="img" alt="" />
+      <img src="https://picsum.photos/id/837/1000/500" class="img" alt="" />
+      <img src="https://picsum.photos/id/537/1000/500" class="img" alt="" />
+      <img src="https://picsum.photos/id/337/1000/500" class="img" alt="" />
+      <img src="https://picsum.photos/id/137/1000/500" class="img" alt="" />
+    </section>
+    <div class="nav">
+      <button onclick="goPrew()">Prew</button>
+      <button onclick="goNext()">Next</button>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
