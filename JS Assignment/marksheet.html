@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>marksheet</title>
+    <style>
+      body {
+        font-size: 18px;
+      }
+      .sec {
+        display: flex;
+        justify-content: space-around;
+        margin-top: 80px;
+      }
+      table {
+        padding: 25px;
+        height: 100px;
+        border: 3px solid black;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="sec">
+      <table>
+        <tr>
+          <td><h3>Marksheet for information technology</h3></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>Enter marks</td>
+        </tr>
+        <tr>
+          <td><label for="sub1">1. C Language</label></td>
+          <td>
+            <input
+              type="number"
+              id="sub1"
+              onblur="checkvalid(this,'sub1Error')"
+              required
+            /><span id="sub1Error"></span>
+          </td>
+        </tr>
+        <tr>
+          <td><label for="sub2">2. C++ Language</label></td>
+          <td>
+            <input
+              type="number"
+              id="sub2"
+              onblur="checkvalid(this,'sub2Error')"
+              required
+            /><span id="sub2Error"></span>
+          </td>
+        </tr>
+        <tr>
+          <td><label for="sub3">3.Database</label></td>
+          <td>
+            <input
+              type="number"
+              id="sub3"
+              onblur="checkvalid(this,'sub3Error')"
+              required
+            /><span id="sub3Error"></span>
+          </td>
+        </tr>
+        <tr>
+          <td><label for="sub4">4. HTML</label></td>
+          <td>
+            <input
+              type="number"
+              id="sub4"
+              onblur="checkvalid(this,'sub4Error')"
+              required
+            /><span id="sub4Error"></span>
+          </td>
+        </tr>
+        <tr>
+          <td><label for="sub5">5. CSS</label></td>
+          <td>
+            <input
+              type="number"
+              id="sub5"
+              onblur="checkvalid(this,'sub5Error')"
+              required
+            /><span id="sub5Error"></span>
+          </td>
+        </tr>
+        <tr>
+          <td><label for="sub6">6. PHP</label></td>
+          <td>
+            <input
+              type="number"
+              id="sub6"
+              onblur="checkvalid(this,'sub6Error')"
+              required
+            /><span id="sub6Error"></span>
+          </td>
+        </tr>
+        <tr>
+          <td><label for="sub7">7. Core java</label></td>
+          <td>
+            <input
+              type="number"
+              id="sub7"
+              onblur="checkvalid(this,'sub7Error')"
+              required
+            /><span id="sub7Error"></span>
+          </td>
+        </tr>
+        <tr>
+          <td></td>
+          <td><button id="result">Result</button></td>
+        </tr>
+        <tr>
+          <td align="center">
+            <p>Total is: <span id="total"></span>/350</p>
+          </td>
+          <td>Percentage is: <span id="percent"></span>%</td>
+        </tr>
+      </table>
+    </div>
+
+    <script>
+      document.getElementById("result").addEventListener("click", () => {
+        let sub1, sub2, sub3, sub4, sub5, sub6, sub7, answer, Percentage;
+        sub1 = parseFloat(document.getElementById("sub1").value);
+        sub2 = parseFloat(document.getElementById("sub3").value);
+        sub3 = parseFloat(document.getElementById("sub3").value);
+        sub4 = parseFloat(document.getElementById("sub4").value);
+        sub5 = parseFloat(document.getElementById("sub5").value);
+        sub6 = parseFloat(document.getElementById("sub6").value);
+        sub7 = parseFloat(document.getElementById("sub7").value);
+
+        answer = sub1 + sub2 + sub3 + sub4 + sub5 + sub6 + sub7;
+        total.innerHTML = answer;
+        total.style.color = "red";
+
+        Percentage = answer / 7;
+        percent.innerHTML = Percentage;
+        percent.style.color = "red";
+      });
+
+      function checkvalid(thisinput, spnid) {
+        if (thisinput.value == "") {
+          document.getElementById(spnid).innerText =
+            "Enter marks here";
+            document.getElementById(spnid).style.color = "red"
+        } else {
+          document.getElementById(spnid).innerText = "";
+        }
+      }
+    </script>
+  </body>
+</html>

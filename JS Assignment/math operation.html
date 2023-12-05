@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>math operation</title>
+    <style>
+      div,
+      button {
+        margin: 3px;
+      }
+    </style>
+  </head>
+  <body>
+    <div>
+      <h2>math operation</h2>
+      <div>Enter 1st number: <input type="text" id="firstn" /></div>
+      <div>Enter 1st number: <input type="text" id="secondn" /></div>
+      <div>
+        <button class="btn" id="plus">+</button>
+        <button class="btn" id="minus">-</button>
+        <button class="btn" id="multi">*</button>
+        <div></div>
+        <button class="btn" id="divide">/</button>
+        <button class="btn" id="modulus">%</button>
+      </div>
+      <div>answer is : <span id="result"></span></div>
+    </div>
+
+    <script>
+      let rus = document.getElementById("result");
+
+      document.getElementById("plus").addEventListener("click", () => {
+        let fnum = parseFloat(document.getElementById("firstn").value);
+        let snum = parseFloat(document.getElementById("secondn").value);
+        let ans = fnum + snum;
+        rus.innerHTML = ans;
+      });
+      document.getElementById("minus").addEventListener("click", () => {
+        let fnum = parseFloat(document.getElementById("firstn").value);
+        let snum = parseFloat(document.getElementById("secondn").value);
+        let ans = fnum - snum;
+        rus.innerHTML = ans;
+      });
+      document.getElementById("multi").addEventListener("click", () => {
+        let fnum = parseFloat(document.getElementById("firstn").value);
+        let snum = parseFloat(document.getElementById("secondn").value);
+        let ans = fnum * snum;
+        rus.innerHTML = ans;
+      });
+      document.getElementById("divide").addEventListener("click", () => {
+        let fnum = parseFloat(document.getElementById("firstn").value);
+        let snum = parseFloat(document.getElementById("secondn").value);
+        let ans = fnum / snum;
+        rus.innerHTML = ans;
+      });
+      document.getElementById("modulus").addEventListener("click", () => {
+        let fnum = parseFloat(document.getElementById("firstn").value);
+        let snum = parseFloat(document.getElementById("secondn").value);
+        let ans = fnum % snum;
+        rus.innerHTML = ans;
+      });
+
+      //   let operator = document.getElementById("plus");
+      //   console.log(operator);
+
+      //   operator.addEventListener("click", () => {
+      //     let firstnum = parseFloat(document.getElementById("firstn").value);
+      //     let secondnum = parseFloat(document.getElementById("secondn").value);
+      //     let ans = document.getElementById("result");
+      //     console.log(firstnum);
+      //     console.log(secondnum);
+      //     let opr = operator.innerHTML;
+      //     console.log(opr);
+      //     let rus = eval(firstnum + opr + secondnum);
+      //     ans.innerHTML = rus;
+      //     console.log(rus);
+      //   });
+    </script>
+  </body>
+</html>
