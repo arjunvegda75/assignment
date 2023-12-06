@@ -1,0 +1,84 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>booking form</title>
+</head>
+<body>
+    
+    <div id="form">
+    <form action="php.backend" method="post">
+        <div>
+          <label for="bookingType">Choice of Booking:</label>
+        </div>
+        <select id="bookingType" onchange="showOptions()">
+          <option value="fullDay">Full day booking</option>
+          <option value="halfDay">Half day booking</option>
+          <option value="hourly">Hourly booking</option>
+        </select>
+
+        <div>
+          <label for="userName">User Name:</label>
+        </div>
+        <input type="text" id="userName" required  />
+
+        <div><label for="mobileNumber">Mobile Number:</label></div>
+        <input type="tel" id="mobileNumber" required />
+
+        <div><label for="email">Email:</label></div>
+        <input type="email" id="email" required />
+
+        <div><label for="numberOfPersons">Number of Persons:</label></div>
+        <input type="number" id="numberOfPersons" required />
+
+        <div id="datepicker" style="display: block">
+          <label for="date">Date:</label>
+          <input type="date" id="date" required  />
+        </div>
+
+        <div id="slotoption" style="display: none">
+          <label for="timeSlot">Time Slot:</label>
+          <select id="timeSlot">
+            <option value="breakfast">Breakfast</option>
+            <option value="lunch">Lunch</option>
+            <option value="dinner">Dinner</option>
+          </select>
+        </div>
+
+        <div id="dateTimepicker" style="display: none">
+          <label for="dateTime">Date & Time:</label>
+          <input type="datetime-local" id="dateTime"  />
+        </div>
+        <div>
+          <input type="submit" value="Submit" />
+        </div>
+      </form>
+    </div>
+
+    <script>
+      function showOptions() {
+        var bookingType = document.getElementById("bookingType").value;
+        var datepicker = document.getElementById("datepicker");
+        var slotoption = document.getElementById("slotoption");
+        var dateTimepicker = document.getElementById("dateTimepicker");
+
+        datepicker.style.display = "none";
+        slotoption.style.display = "none";
+        dateTimepicker.style.display = "none";
+
+        if (bookingType === "fullDay") {
+          datepicker.style.display = "block";
+        } else if (bookingType === "halfDay") {
+          datepicker.style.display = "block";
+          slotoption.style.display = "block";
+        } else if (bookingType === "hourly") {
+          dateTimepicker.style.display = "block";
+        }
+      }
+    </script>
+
+</div>
+</body>
+</html>
